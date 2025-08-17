@@ -1,5 +1,6 @@
 import { Header } from "~/components/Header";
 import type { Route } from "./+types/home";
+import { RecipeCard } from "~/components/RecipeCard";
 
 export function meta({ }: Route.MetaArgs) {
   return [
@@ -11,5 +12,6 @@ export function meta({ }: Route.MetaArgs) {
 export default function Home() {
   return <>
     <Header />
+    <RecipeCard />
   </>;
 }
