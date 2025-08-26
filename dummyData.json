@@ -1,7 +1,7 @@
 {
   "id": 1,
   "title": "Spaghetti Carbonara",
-  "img": "",
+  "img": "./public/stock.png",
   "ingredients": [
     "spaghetti",
     "eggs",
