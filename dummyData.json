@@ -1,16 +1,34 @@
-{
-  "id": 1,
-  "title": "Spaghetti Carbonara",
-  "img": "./public/stock.png",
-  "ingredients": [
-    "spaghetti",
-    "eggs",
-    "parmesan cheese",
-    "pancetta",
-    "black pepper"
-  ],
-  "instructions": [
-    "Cook spaghetti. In a bowl, mix eggs and cheese. Fry pancetta. Combine all with pepper.",
-    "lkshdlkhflkdhsklfh"
-  ]
-}
+[
+  {
+    "id": "1",
+    "title": "Spaghetti Carbonara",
+    "imageUrl": "./public/stock.png",
+    "ingredients": [
+      "spaghetti",
+      "eggs",
+      "parmesan cheese",
+      "pancetta",
+      "black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti. In a bowl, mix eggs and cheese. Fry pancetta. Combine all with pepper.",
+      "lkshdlkhflkdhsklfh"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "What",
+    "imageUrl": "./public/stock.png",
+    "ingredients": [
+      "spaghetti",
+      "eggs",
+      "parmesan cheese",
+      "pancetta",
+      "black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti. In a bowl, mix eggs and cheese. Fry pancetta. Combine all with pepper.",
+      "lkshdlkhflkdhsklfh"
+    ]
+  }
+]
