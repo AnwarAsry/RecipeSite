@@ -1,7 +1,8 @@
 import { FaRegHeart } from "react-icons/fa"
 import { HiOutlineClock } from "react-icons/hi"
+import type { IRecipeCard } from "~/models/Recipe"
 
-export const RecipeCard = () => {
+export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
     return (
         <div className="relative max-w-3xs p-4 rounded-xl shadow-md overflow-visible bg-white">
             {/* Image */}
@@ -14,7 +15,7 @@ export const RecipeCard = () => {
             <div className="">
                 {/* Title */}
                 <a href="#" className="hover:underline">
-                    <h3 className="text-md font-semibold text-gray-800">Spaghetti Carbonara</h3>
+                    <h3 className="text-md font-semibold text-gray-800">{recipe.title}</h3>
                 </a>
 
                 {/* Prep Time */}
