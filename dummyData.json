@@ -1,6 +1,7 @@
 [
   {
     "id": "1",
+    "category": "Pasta",
     "title": "Spaghetti Carbonara",
     "imageUrl": "./public/stock.png",
     "ingredients": [
@@ -17,6 +18,7 @@
   },
   {
     "id": "2",
+    "category": "Meat",
     "title": "What",
     "imageUrl": "./public/stock.png",
     "ingredients": [

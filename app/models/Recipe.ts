@@ -1,5 +1,8 @@
+import type { Category } from "./Categories";
+
 export interface IRecipe {
     id: string;
+    category: Category;
     title: string;
     ingredients: string[];
     instructions: string[];
@@ -9,6 +12,7 @@ export interface IRecipe {
 
 export interface IRecipeCard {
     id: string;
+    category: Category;
     title: string;
     imageUrl: string;
 }
