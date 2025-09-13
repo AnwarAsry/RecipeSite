@@ -1,5 +1,5 @@
 import { Header } from "~/components/Header";
-import type { Route } from "./+types/home";
+
 import { RecipeCard } from "~/components/RecipeCard";
 import { RecipeGrid } from "~/components/RecipeGrid";
 import dummyData from "../../dummyData.json"
@@ -8,6 +8,7 @@ import { Filter } from "~/components/Filter";
 import { FilterPill } from "~/components/FilterPill";
 import { useState } from "react";
 import { Category } from "~/models/Categories";
+import type { Route } from "./+types/_index";
 
 export function meta({ }: Route.MetaArgs) {
 	return [
