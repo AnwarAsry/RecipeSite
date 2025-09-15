@@ -1,5 +1,6 @@
 import { FaRegHeart } from "react-icons/fa"
 import { HiOutlineClock } from "react-icons/hi"
+import { Link } from "react-router"
 import type { IRecipeCard } from "~/models/Recipe"
 
 export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
@@ -12,11 +13,11 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
                 alt="Recipe Image" />
 
             {/* Content */}
-            <div className="">
+            <div>
                 {/* Title */}
-                <a href="#" className="hover:underline">
+                <Link to={`/${recipe.id}`} className="hover:underline">
                     <h3 className="text-md font-semibold text-gray-800">{recipe.title}</h3>
-                </a>
+                </Link>
 
                 {/* Prep Time */}
                 <div className="w-full mt-2 flex items-center gap-1">
