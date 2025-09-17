@@ -1,14 +1,12 @@
 import { Header } from "~/components/Header";
-
 import { RecipeCard } from "~/components/RecipeCard";
 import { RecipeGrid } from "~/components/RecipeGrid";
-import dummyData from "../../dummyData.json"
-import type { IRecipeCard } from "~/models/Recipe";
 import { Filter } from "~/components/Filter";
 import { FilterPill } from "~/components/FilterPill";
 import { useState } from "react";
 import { Category } from "~/models/Categories";
 import type { Route } from "./+types/_index";
+import { fetchAllRecipes } from "~/actions/Recipes";
 
 export function meta({ }: Route.MetaArgs) {
 	return [
@@ -17,16 +15,22 @@ export function meta({ }: Route.MetaArgs) {
 	];
 }
 
-const dataDummy = dummyData as unknown as IRecipeCard[];
+export async function loader() {
+	const recipe = await fetchAllRecipes();
 
-export default function Home() {
+	return recipe.data;
+}
+
+export default function Home({
+	loaderData,
+}: Route.ComponentProps) {
 	const [activeFilter, setActiveFilter] = useState<Category>(Category.All);
 
-	const filterData = activeFilter === Category.All ? dataDummy : dataDummy.filter(data => data.category === activeFilter)
+	const filterData = activeFilter === Category.All ? loaderData : loaderData!.filter(data => data.category === activeFilter)
 
 	return <>
 		<Header />
-		<div className="w-[798px] mt-20 mx-auto">
+		<div className="w-[798px] my-20 mx-auto">
 			<div className="mb-10 flex">
 				<Filter>
 					<FilterPill text="All" active={activeFilter === Category.All} onClick={() => setActiveFilter(Category.All)} />
@@ -39,7 +43,7 @@ export default function Home() {
 			</div>
 			<RecipeGrid>
 				{
-					filterData.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
+					filterData!.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
 				}
 			</RecipeGrid>
 		</div>

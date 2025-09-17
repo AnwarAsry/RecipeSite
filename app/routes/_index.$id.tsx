@@ -2,19 +2,17 @@ import type { Route } from "./+types/_index.$id";
 import { fetchRecipeById } from "~/actions/Recipes";
 
 
-// provides `loaderData` to the component
 export async function loader({ params }: Route.LoaderArgs) {
     const recipe = await fetchRecipeById(params.id);
 
     return recipe.data;
 }
 
-// renders after the loader is done
 export default function RecipePage({
     loaderData,
 }: Route.ComponentProps) {
     return (
-        <div className="w-6xl my-20 mx-auto grid grid-cols-[1fr_3fr]">
+        <div className="w-4xl my-20 mx-auto grid grid-cols-[1fr_2fr]">
             <section className="">
                 <img src={loaderData?.imageUrl} alt="image of food"
                     className="w-full h-70 object-cover rounded-2xl border"
