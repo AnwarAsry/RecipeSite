@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Category } from "~/models/Categories";
 import type { Route } from "./+types/_index";
 import { fetchAllRecipes } from "~/actions/Recipes";
+import { UploadBtn } from "~/components/UploadBtn";
 
 export function meta({ }: Route.MetaArgs) {
 	return [
@@ -30,17 +31,16 @@ export default function Home({
 
 	return <>
 		<Header />
-		<div className="w-[798px] my-20 mx-auto">
-			<div className="mb-10 flex">
-				<Filter>
-					<FilterPill text="All" active={activeFilter === Category.All} onClick={() => setActiveFilter(Category.All)} />
-					<FilterPill text="Chicken" active={activeFilter === Category.Chicken} onClick={() => setActiveFilter(Category.Chicken)} />
-					<FilterPill text="Meat" active={activeFilter === Category.Meat} onClick={() => setActiveFilter(Category.Meat)} />
-					<FilterPill text="Soup" active={activeFilter === Category.Soup} onClick={() => setActiveFilter(Category.Soup)} />
-					<FilterPill text="Dessert" active={activeFilter === Category.Dessert} onClick={() => setActiveFilter(Category.Dessert)} />
-					<FilterPill text="Pasta" active={activeFilter === Category.Pasta} onClick={() => setActiveFilter(Category.Pasta)} />
-				</Filter>
-			</div>
+		<div className="mt-20 mb-10 mx-auto flex gap-4 justify-center">
+			<Filter>
+				{
+					(Object.keys(Category) as Array<keyof typeof Category>)
+						.map((key, i) => <FilterPill key={i} text={key} active={activeFilter === Category[key]} onClick={() => setActiveFilter(Category[key])} />)
+				}
+			</Filter>
+			<UploadBtn />
+		</div>
+		<div className="w-fit my-10 mx-auto">
 			<RecipeGrid>
 				{
 					filterData!.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
