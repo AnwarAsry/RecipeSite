@@ -16,3 +16,12 @@ export interface IRecipeCard {
     title: string;
     imageUrl: string;
 }
+
+export interface IRecipeForm {
+    category: Category;
+    title: string;
+    ingredients: string;
+    instructions: string;
+    imageFile: File;
+    notes: string;
+}
