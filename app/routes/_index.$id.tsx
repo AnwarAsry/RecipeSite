@@ -26,7 +26,7 @@ export default function RecipePage({
                     </ul>
                 </div>
             </section>
-            <section className="pl-8 grid gap-2">
+            <section className="pl-8">
                 <div>
                     <h1 className="text-4xl">{loaderData?.title}</h1>
                     <hr className="mt-3 rounded-full border-1 border-[#bbbbbb]" />

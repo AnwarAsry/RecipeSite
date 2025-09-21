@@ -8,8 +8,8 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
         <div className="relative max-w-3xs p-4 rounded-xl shadow-md overflow-visible bg-white">
             {/* Image */}
             <img
-                className="w-full h-40 mb-4 object-cover rounded-md"
-                src="../../public/stock.png"
+                className="w-[224px] h-40 mb-4 object-cover rounded-md"
+                src={recipe.imageUrl}
                 alt="Recipe Image" />
 
             {/* Content */}
