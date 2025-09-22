@@ -20,10 +20,10 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
                 </Link>
 
                 {/* Prep Time */}
-                <div className="w-full mt-2 flex items-center gap-1">
+                {/* <div className="w-full mt-2 flex items-center gap-1">
                     <HiOutlineClock className="text-xl text-orange-400" />
-                    <span>888 mins</span>
-                </div>
+                    <span>{recipe.} mins</span>
+                </div> */}
 
                 <div className="mt-3 flex justify-end">
                     {/* Heart */}
