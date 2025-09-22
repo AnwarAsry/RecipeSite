@@ -6,7 +6,7 @@ export interface IRecipe {
     title: string;
     ingredients: string[];
     instructions: string[];
-    imageUrl: string;
+    image_url: string;
     notes: string;
 }
 
@@ -14,5 +14,14 @@ export interface IRecipeCard {
     id: string;
     category: Category;
     title: string;
-    imageUrl: string;
+    image_url: string;
+}
+
+export interface IRecipeForm {
+    category: Category;
+    title: string;
+    ingredients: string;
+    instructions: string;
+    imageFile: File;
+    notes: string;
 }

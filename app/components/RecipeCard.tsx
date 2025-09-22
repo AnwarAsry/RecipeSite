@@ -8,8 +8,8 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
         <div className="relative max-w-3xs p-4 rounded-xl shadow-md overflow-visible bg-white">
             {/* Image */}
             <img
-                className="w-full h-40 mb-4 object-cover rounded-md"
-                src="../../public/stock.png"
+                className="w-[224px] h-40 mb-4 object-cover rounded-md"
+                src={recipe.image_url}
                 alt="Recipe Image" />
 
             {/* Content */}
@@ -20,10 +20,10 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
                 </Link>
 
                 {/* Prep Time */}
-                <div className="w-full mt-2 flex items-center gap-1">
+                {/* <div className="w-full mt-2 flex items-center gap-1">
                     <HiOutlineClock className="text-xl text-orange-400" />
-                    <span>888 mins</span>
-                </div>
+                    <span>{recipe.} mins</span>
+                </div> */}
 
                 <div className="mt-3 flex justify-end">
                     {/* Heart */}
