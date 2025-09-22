@@ -9,7 +9,7 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
             {/* Image */}
             <img
                 className="w-[224px] h-40 mb-4 object-cover rounded-md"
-                src={recipe.imageUrl}
+                src={recipe.image_url}
                 alt="Recipe Image" />
 
             {/* Content */}

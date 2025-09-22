@@ -49,7 +49,7 @@ export const postRecipe = async (recipe: IRecipeForm): Promise<ServerAction> => 
         if (uploadError) throw uploadError;
 
         // Get public URL of the uploaded image
-        const { data: publicUrl } = supabase.storage
+        const { data } = supabase.storage
             .from("recipe-images")
             .getPublicUrl(filePath);
 
@@ -59,7 +59,7 @@ export const postRecipe = async (recipe: IRecipeForm): Promise<ServerAction> => 
             category,
             ingredients: ingredients.split("\n"),
             instructions: instructions.split("\n"),
-            image_url: publicUrl.publicUrl,
+            image_url: data.publicUrl,
             notes,
         });
         if (dbError) throw dbError;

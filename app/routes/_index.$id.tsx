@@ -14,7 +14,7 @@ export default function RecipePage({
     return (
         <div className="w-4xl my-20 mx-auto grid grid-cols-[1fr_2fr]">
             <section>
-                <img src={loaderData?.imageUrl} alt="image of food"
+                <img src={loaderData?.image_url} alt="image of food"
                     className="w-74 h-70 object-cover border rounded-2xl"
                 />
 
@@ -34,6 +34,14 @@ export default function RecipePage({
                 <ol className="mt-5 pl-5 list-decimal">
                     {loaderData?.instructions.map((inst, i) => <li key={i} className="mb-2 text-lg">{inst}</li>)}
                 </ol>
+                <div className="mt-10">
+                    <h4 className="text-xl font-bold">
+                        Notes
+                    </h4>
+                    <p className="mt-1">
+                        {loaderData?.notes}
+                    </p>
+                </div>
             </section>
         </div>
     )

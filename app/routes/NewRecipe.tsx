@@ -2,7 +2,6 @@ import { useState } from "react";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { Link } from "react-router";
 import { postRecipe } from "~/actions/Recipes";
-import { supabase } from "~/lib/supabase";
 import type { Category } from "~/models/Categories";
 import type { IRecipeForm } from "~/models/Recipe";
 
@@ -25,7 +24,7 @@ export default function NewRecipe() {
 
     const handleSubmit = async () => {
         // Basic validation
-        if (!title || !file) return alert("Title and image are required");
+        if (!title || !file || category.match("Other")) return alert("Title and image and category are required");
         setUploading(true);
 
         try {
@@ -50,6 +49,8 @@ export default function NewRecipe() {
             setInstructions("");
             setNotes("");
             setFile(null);
+            setCategory("Other");
+
         } catch (err: any) {
             alert("Error: " + err.message);
         } finally {
