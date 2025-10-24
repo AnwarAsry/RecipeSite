@@ -1,8 +1,6 @@
-import type { ReactNode } from "react"
-
-export const Filter = ({ children }: { children: ReactNode }) => {
+export const Filter = ({ children }: { children: React.ReactNode }) => {
     return (
-        <div className="w-fit h-fit px-3 py-2 flex flex-wrap items-center justify-between rounded-full bg-white">
+        <div className="mb-12 flex flex-wrap justify-center gap-3">
             {children}
         </div>
     )

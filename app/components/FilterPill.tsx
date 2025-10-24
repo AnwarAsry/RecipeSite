@@ -8,11 +8,11 @@ export const FilterPill = ({ text, active, onClick }: FilterPillProps) => {
     return (
         <span
             className={`
-                ${active
-                    ? "text-red-500 border" : "text-slate-400"}
-                w-fit h-fit px-6 py-1 inline-block 
-                rounded-full text-center uppercase 
-                font-semibold border-slate-300 hover:cursor-pointer
+                ${active ?
+                    "bg-[#4b5563] hover:bg-[#374151] text-white" :
+                    "border border-[#d1d5db] hover:bg-neutral-50 bg-white text-[#374151]"}
+                px-6 py-2 rounded-full
+                cursor-pointer
             `}
             onClick={onClick}
         >

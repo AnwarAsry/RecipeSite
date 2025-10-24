@@ -1,13 +1,13 @@
-import { Header } from "~/components/Header";
 import { RecipeCard } from "~/components/RecipeCard";
 import { RecipeGrid } from "~/components/RecipeGrid";
 import { Filter } from "~/components/Filter";
 import { FilterPill } from "~/components/FilterPill";
+
 import { useState } from "react";
 import { Category } from "~/models/Categories";
 import type { Route } from "./+types/_index";
 import { fetchAllRecipes } from "~/actions/Recipes";
-import { UploadBtn } from "~/components/UploadBtn";
+import { SearchBar } from "~/components/SearchBar";
 
 export function meta({ }: Route.MetaArgs) {
 	return [
@@ -30,17 +30,16 @@ export default function Home({
 	const filterData = activeFilter === Category.All ? loaderData : loaderData!.filter(data => data.category === activeFilter)
 
 	return <>
-		<Header />
-		<div className="mt-20 mb-10 mx-auto flex gap-4 justify-center">
+		<section className="max-w-4xl mx-auto px-6 py-20">
+			<SearchBar />
 			<Filter>
 				{
 					(Object.keys(Category) as Array<keyof typeof Category>)
 						.map((key, i) => <FilterPill key={i} text={key} active={activeFilter === Category[key]} onClick={() => setActiveFilter(Category[key])} />)
 				}
 			</Filter>
-			<UploadBtn />
-		</div>
-		<div className="w-fit my-10 mx-auto">
+		</section>
+		<div className="max-w-7xl px-6 mx-auto">
 			<RecipeGrid>
 				{
 					filterData!.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
