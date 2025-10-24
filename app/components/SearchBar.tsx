@@ -7,7 +7,7 @@ export const SearchBar = () => {
                 </svg>
             </div>
             <input className="w-full pl-12 pr-4 py-4 text-lg border border-[#d1d5db] rounded-xl focus:ring-2 focus:ring-[#6b7280] focus:border-transparent shadow-sm" type="text" name="searchInp" id="searchInp" placeholder="Search for recipes..." />
-            <button className="pr-4 absolute inset-y-0 right-0 flex items-center">
+            <button className="pr-4 absolute inset-y-0 right-0 flex items-center cursor-pointer">
                 <span className="px-6 py-2 bg-[#4b5563] hover:bg-[#374151] text-white rounded-lg">Search</span>
             </button>
         </div>
