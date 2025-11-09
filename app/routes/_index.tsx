@@ -8,6 +8,7 @@ import { Category } from "~/models/Categories";
 import type { Route } from "./+types/_index";
 import { fetchAllRecipes } from "~/actions/Recipes";
 import { SearchBar } from "~/components/SearchBar";
+import type { IRecipe } from "~/models/Recipe";
 
 export function meta({ }: Route.MetaArgs) {
 	return [
@@ -42,7 +43,10 @@ export default function Home({
 		<div className="max-w-7xl px-6 mx-auto">
 			<RecipeGrid>
 				{
-					filterData!.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
+					filterData && filterData.length !== 0 && filterData.map(recipe => <RecipeCard key={recipe.id} recipe={recipe} />)
+				}
+				{
+					filterData && filterData.length === 0 && <p className="text-center col-span-full text-gray-500">No recipes found.</p>
 				}
 			</RecipeGrid>
 		</div>

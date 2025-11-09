@@ -15,7 +15,7 @@ export const RecipeCard = ({ recipe }: { recipe: IRecipeCard }) => {
                     src={recipe.image_url}
                     alt="Recipe Image"
                 />
-                <LikeBtn liked={true} className="absolute top-4 right-4 shadow-sm !bg-white" />
+                <LikeBtn liked={false} className="absolute top-4 right-4 shadow-sm !bg-white" />
                 <div className="p-4 absolute bottom-0 left-0 flex justify-between items-end">
                     {/* Category */}
                     <PillTag text={recipe.category} />
